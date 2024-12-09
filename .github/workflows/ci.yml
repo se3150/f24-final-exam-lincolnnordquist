@@ -53,19 +53,5 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Set Up Chromedriver
-        uses: nanasess/setup-chromedriver@master
-
-      - name: Debug Environment
-        run: |
-          echo "Python Version:"
-          python --version
-          echo "Installed Python Packages:"
-          pip list
-          echo "Chromedriver Version:"
-          chromedriver --version
-          echo "Google Chrome Version:"
-          google-chrome --version
-
-      - name: Run Behave Tests for spy_messages.feature
+      - name: Run Behave Tests
         run: behave features/spy_messages.feature
